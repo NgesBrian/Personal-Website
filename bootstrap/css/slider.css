@@ -1,0 +1,118 @@
+
+#container span.one,
+#container span.two {
+    color:#fff;
+    font:bold 30px verdana;
+    position:absolute;
+    left:30px;
+    top:90px;
+}
+
+#container span.two {
+    left:500px;
+}
+    top:200px;
+}
+h1{
+   color:#fff;
+   font-size:35px;
+   font-family:algerian,arial;
+   margin-bottom:10px;}
+   
+ #grad1 {
+    height: 40px;
+    background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); 
+}
+
+/* Slider */
+.slider {
+    height: 300px;
+    left:25%;
+    margin-top: 200px;
+    position: absolute;
+    top: 100px;
+    width: 750px;
+    /*box-shadow*/
+    -webkit-box-shadow: 0 0 5px #000;
+    -moz-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+.slider .frames {
+    height: 350px;
+    position: relative;
+}
+.slider .frames .slide {
+    height: 200px;
+    list-style: none;
+    position: absolute;
+    width: 100%;
+}
+.slider .slide:target { z-index: 100 }
+.slider .frames .slide img {
+    height: 400px;
+    width: 100%;
+}
+.slider .frames .slide nav a {
+    background: hsla(0,0%,0%,.75);
+    color: #fff;
+    font-size: 16px;
+    line-height: 90px;
+   
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 180px;
+    width: 70px;
+	
+    visibility: hidden;
+    z-index: 10;
+}
+.slider:hover .frames .slide nav a {
+    opacity: 1;
+    visibility: visible;
+}
+.slider .frames .slide nav .prev {
+    /*border-radius*/
+    -webkit-border-radius: 0 25px 25px 0;
+    -moz-border-radius: 0 25px 25px 0;
+    border-radius: 0 25px 25px 0;
+    left: 0;
+}
+.slider .frames .slide nav .next {
+    /*border-radius*/
+    -webkit-border-radius: 25px 0 0 25px;
+    -moz-border-radius: 25px 0 0 25px;
+    border-radius: 25px 0 0 25px;
+    right: 0;
+}
+.slider .frames .slide nav a:hover { background: #000 }
+.slider .quicknav {
+    bottom: 0;
+    font-size: 0;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 100;
+}
+.slider:hover .quicknav { opacity: .9 }
+.slider .quicknav li { display: inline-block }
+.slider .quicknav a {
+    background: #347;
+    border: 1px #e4d4aa;
+    /*border-radius*/
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    display: block;
+    height: 15px;
+    margin: 10px 5px;
+    text-decoration: none;
+    width: 15px;
+}
+.slider .quicknav a:hover { background:#f00 }
+.slider #one:target ~ .quicknav a[href="#one"], .slider #two:target ~ .quicknav a[href="#two"], .slider #three:target ~ .quicknav a[href="#three"], .slider #four:target ~ .quicknav a[href="#four"], .slider #five:target ~ .quicknav a[href="#five"] {
+    background:#ff0;
+    border-color: #0f0;
+    background:00f;
+   }

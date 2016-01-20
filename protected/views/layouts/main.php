@@ -1,0 +1,79 @@
+<?php /* @var $this Controller */ ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="en">
+
+<!--bootstrap framework-->
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" media="screen, projection">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.min.css" media="print">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/js/bootstrap.min.js" media="print">
+
+
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
+
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+</head>
+
+<body style="background-color:#2F4F4F; color:blue">
+
+<div class="container" id="page">
+
+	<div id="header" style="background-color:green">
+	
+	<marquee>
+		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+	</marquee>
+			<div text="float-left">
+	            
+			</div>			            
+			<div class="text-right ">
+			<h4 style="color:#CC6600">
+            <?php
+                if(Yii::app()->user->hasState('uname')){
+                    echo CHtml::link(Yii::app()->user->getState('uname'),array('/site/Logout'));
+                }
+                
+                else {
+                     echo CHtml::link('Admininstrator',array('/site/Admin',));
+                }
+            ?>
+<img src="<?php Yii::app()->request->baseUrl?>bootstrap/img/3.JPG" width="180" height="10">
+			<h4>
+            </div>    
+	</div><!-- header -->
+
+	<div id="mainmenu">
+		<?php $this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+				array('label'=>'Home', 'url'=>array('/site/index')),
+				
+				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				//array('label'=>'Administrator', 'url'=>array('/site/admin'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			),
+		)); ?>
+	</div><!-- mainmenu -->
+	<?php if(isset($this->breadcrumbs)):?>
+		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+			'links'=>$this->breadcrumbs,
+		)); ?><!-- breadcrumbs -->
+	<?php endif?>
+
+	<?php echo $content; ?>
+
+	<div class="clear"></div>
+
+	<div id="footer">
+		Copyright &copy; <?php echo date('d/M/Y'); ?> <br>by Nges B .<br/>
+		All Rights Reserved to Nges B tech .<br/>
+		<?php echo "Nges B"; ?>
+	</div><!-- footer -->
+
+</div><!-- page -->
+
+</body>
+</html>

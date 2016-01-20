@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+ 	<div class="text-left">
+ 			         <?php echo CHtml::link('<button class="btn btn-primary" type="submit">inbox</button>',array('/site/inbox',));?>			
+	 </div>
+	 <div class="text-center">
+	 		         <?php echo CHtml::link('<button class="btn btn-primary" type="submit">Mails</button>',array('/site/mail',));?>			
+	</div>
+	<div class="text-right">
+			         <?php echo CHtml::link('<button class="btn btn-primary" type="submit">compose</button>',array('/site/compose',));?>			
+	
+ 
+</html>
